@@ -15,7 +15,7 @@ const PRODUCTS_DATA = [
     id: 1,
     name: 'Casio G-Shock',
     image: 'imgs/Casio G-Shock.jpeg',
-    price: 'S/ 599.00',
+    price: 'S/ 609.00',
     description:
       'Diseñado para quienes buscan resistencia, estilo y funcionalidad en un solo reloj. Fabricado con caja de resina reforzada con fibra de carbono, correa de resina de alta durabilidad y cristal mineral resistente a impactos y rayaduras.',
     features: [
@@ -50,7 +50,7 @@ const PRODUCTS_DATA = [
     id: 3,
     name: 'Invicta Pro Diver Chronograph',
     image: 'imgs/Invicta Pro Diver Chronograph.jpeg',
-    price: 'S/ 569.00',
+    price: 'S/ 589.00',
     description:
       'Diseño inspirado en relojes de buceo profesionales. Fabricado con caja y brazalete de acero inoxidable, cristal Flame Fusion y equipado con función cronógrafo para un estilo deportivo y elegante.',
     features: [
