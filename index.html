@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="es" class="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TimeVerse – Más allá del tiempo</title>
+  <meta name="description" content="Descubre la exclusiva colección de relojes originales importados desde Estados Unidos. TimeVerse: elegancia, precisión y tiempo con significado." />
+  <meta name="keywords" content="relojes originales, TimeVerse, relojes importados, Casio G-Shock, Invicta, relojes premium, Lima, Perú" />
+  <meta property="og:title" content="TimeVerse – Más allá del tiempo" />
+  <meta property="og:description" content="Relojes originales importados desde Estados Unidos. Elegancia y precisión." />
+  <meta property="og:image" content="imgs/1er_stock_relojes.png" />
+  <meta property="og:locale" content="es_PE" />
+  <meta property="og:type" content="website" />
+  <meta name="robots" content="index, follow" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⌚</text></svg>" />
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            'dark-primary': '#0D0D0D',
+            'dark-secondary': '#171717',
+            'dark-tertiary': '#2B2B2B',
+            'accent-gold': '#C8A96A',
+            'accent-silver': '#B8BCC2',
+          },
+          fontFamily: {
+            sans: ['Manrope', 'Montserrat', 'Poppins', 'sans-serif'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <script>
+    (function() {
+      try {
+        var theme = JSON.parse(localStorage.getItem('timeverse-theme'));
+        if (theme === false) {
+          document.documentElement.classList.remove('dark');
+        } else {
+          document.documentElement.classList.add('dark');
+        }
+      } catch(e) {
+        document.documentElement.classList.add('dark');
+      }
+    })();
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header id="header" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 bg-transparent">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16 sm:h-20">
+        <a href="#hero" class="flex flex-col group">
+          <span class="text-xl sm:text-2xl font-bold tracking-[0.25em] text-accent-gold transition-colors">TIMEVERSE</span>
+          <span class="text-[10px] sm:text-xs tracking-[0.15em] text-accent-silver/70 -mt-0.5">Más allá del tiempo</span>
+        </a>
+
+        <nav class="hidden md:flex items-center gap-8">
+          <a href="#hero" class="text-sm tracking-wider text-white/70 dark:text-white/70 text-gray-700 hover:text-accent-gold transition-colors duration-300">Inicio</a>
+          <a href="#coleccion" class="text-sm tracking-wider text-white/70 dark:text-white/70 text-gray-700 hover:text-accent-gold transition-colors duration-300">Colección</a>
+          <a href="#nosotros" class="text-sm tracking-wider text-white/70 dark:text-white/70 text-gray-700 hover:text-accent-gold transition-colors duration-300">Nosotros</a>
+          <a href="#garantia" class="text-sm tracking-wider text-white/70 dark:text-white/70 text-gray-700 hover:text-accent-gold transition-colors duration-300">Garantía</a>
+          <a href="#contacto" class="text-sm tracking-wider text-white/70 dark:text-white/70 text-gray-700 hover:text-accent-gold transition-colors duration-300">Contacto</a>
+        </nav>
+
+        <div class="flex items-center gap-3">
+          <button id="theme-toggle" class="relative p-2 rounded-full transition-all duration-500 hover:bg-dark-tertiary/50 dark:hover:bg-dark-tertiary/50 hover:bg-gray-200 group" aria-label="Alternar modo oscuro">
+            <svg id="sun-icon" class="w-5 h-5 text-accent-gold rotate-90 opacity-0 scale-0 transition-all duration-500 dark:rotate-90 dark:opacity-0 dark:scale-0" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/></svg>
+            <svg id="moon-icon" class="w-5 h-5 text-accent-silver absolute inset-0 m-auto transition-all duration-500 dark:rotate-0 dark:opacity-100 dark:scale-100 rotate-0 opacity-100 scale-100" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+          </button>
+          <a href="https://wa.me/51970660178" target="_blank" rel="noopener noreferrer" class="hidden sm:flex items-center gap-2 px-4 py-2 text-sm font-medium text-dark-primary bg-accent-gold rounded-full hover:bg-accent-gold/90 transition-all duration-300">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1Z"/><path d="M14 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1Z"/><path d="M9.5 13.5c.5.5 1.5 1 2.5 1s2-.5 2.5-1"/></svg>
+            Escríbenos
+          </a>
+          <button id="menu-btn" class="md:hidden p-2 text-white/80 dark:text-white/80 text-gray-700 hover:text-accent-gold transition-colors" aria-label="Abrir menú">
+            <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+            <svg id="close-icon" class="hidden" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="mobile-menu" class="hidden md:hidden bg-dark-secondary/98 dark:bg-dark-secondary/98 bg-white/98 backdrop-blur-md border-t border-white/5 dark:border-white/5 border-gray-200">
+      <div class="px-4 py-6 space-y-4">
+        <a href="#hero" class="block text-sm tracking-wider text-white/70 dark:text-white/70 text-gray-700 hover:text-accent-gold transition-colors py-2">Inicio</a>
+        <a href="#coleccion" class="block text-sm tracking-wider text-white/70 dark:text-white/70 text-gray-700 hover:text-accent-gold transition-colors py-2">Colección</a>
+        <a href="#nosotros" class="block text-sm tracking-wider text-white/70 dark:text-white/70 text-gray-700 hover:text-accent-gold transition-colors py-2">Nosotros</a>
+        <a href="#garantia" class="block text-sm tracking-wider text-white/70 dark:text-white/70 text-gray-700 hover:text-accent-gold transition-colors py-2">Garantía</a>
+        <a href="#contacto" class="block text-sm tracking-wider text-white/70 dark:text-white/70 text-gray-700 hover:text-accent-gold transition-colors py-2">Contacto</a>
+        <a href="https://wa.me/51970660178" target="_blank" rel="noopener noreferrer" class="flex items-center justify-center gap-2 w-full px-4 py-3 text-sm font-medium text-dark-primary bg-accent-gold rounded-full hover:bg-accent-gold/90 transition-all">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1Z"/><path d="M14 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1Z"/><path d="M9.5 13.5c.5.5 1.5 1 2.5 1s2-.5 2.5-1"/></svg>
+          Escríbenos
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden bg-dark-primary dark:bg-dark-primary bg-white">
+    <div class="absolute inset-0 bg-gradient-to-b from-dark-primary dark:from-dark-primary from-white via-dark-primary/90 dark:via-dark-primary/90 via-white/90 to-dark-secondary dark:to-dark-secondary to-gray-100 pointer-events-none"></div>
+    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(200,169,106,0.08)_0%,_transparent_60%)]"></div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <div class="grid lg:grid-cols-2 gap-12 items-center min-h-[80vh]">
+        <div class="text-center lg:text-left order-2 lg:order-1">
+          <h1 class="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-[0.15em] text-accent-gold mb-4 fade-in">TIMEVERSE</h1>
+          <p class="text-lg sm:text-xl tracking-[0.3em] text-accent-silver/80 mb-8 uppercase fade-in">Más allá del tiempo</p>
+          <p class="text-sm sm:text-base leading-relaxed text-white/60 dark:text-white/60 text-gray-600 max-w-lg mx-auto lg:mx-0 mb-10 fade-in">
+            No vendemos simplemente relojes.<br />
+            Ofrecemos piezas que representan elegancia, precisión y momentos que perduran.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start fade-in">
+            <a href="#coleccion" class="inline-flex items-center justify-center gap-2 px-8 py-3.5 text-sm font-medium text-dark-primary bg-accent-gold rounded-full hover:bg-accent-gold/90 transition-all duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+              Ver colección
+            </a>
+            <a href="https://wa.me/51970660178" target="_blank" rel="noopener noreferrer" class="inline-flex items-center justify-center gap-2 px-8 py-3.5 text-sm font-medium text-accent-gold border border-accent-gold/40 rounded-full hover:bg-accent-gold/10 transition-all duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1Z"/><path d="M14 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1Z"/><path d="M9.5 13.5c.5.5 1.5 1 2.5 1s2-.5 2.5-1"/></svg>
+              Escribir por WhatsApp
+            </a>
+          </div>
+        </div>
+
+        <div class="order-1 lg:order-2 flex justify-center fade-in">
+          <div class="hero-image relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[500px] lg:h-[500px]">
+            <div class="absolute inset-0 bg-gradient-to-b from-accent-gold/5 to-transparent rounded-full blur-3xl"></div>
+            <img src="imgs/1er_stock_relojes.png" alt="TimeVerse Relojes Premium" class="w-full h-full object-contain drop-shadow-2xl" />
+            <div class="absolute inset-0 rounded-full bg-gradient-to-t from-dark-primary/30 dark:from-dark-primary/30 from-white/30 via-transparent to-transparent pointer-events-none"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-accent-gold/20 to-transparent"></div>
+  </section>
+
+  <!-- ===== WHY TIMEVERSE ===== -->
+  <section class="py-20 sm:py-28 bg-dark-secondary dark:bg-dark-secondary bg-gray-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 fade-in">
+        <h2 class="text-3xl sm:text-4xl font-bold tracking-wide text-white dark:text-white text-gray-900 mb-4">
+          ¿Por qué elegir <span class="text-accent-gold">TimeVerse</span>?
+        </h2>
+        <div class="w-16 h-px bg-accent-gold/40 mx-auto"></div>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div class="fade-in card-item p-6 sm:p-8 rounded-2xl bg-dark-tertiary/50 dark:bg-dark-tertiary/50 bg-white border border-white/5 dark:border-white/5 border-gray-200 hover:border-accent-gold/20 transition-all duration-500">
+          <div class="w-12 h-12 rounded-xl bg-accent-gold/10 flex items-center justify-center mb-5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-accent-gold"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold text-white dark:text-white text-gray-900 mb-2">Relojes originales</h3>
+          <p class="text-sm text-white/50 dark:text-white/50 text-gray-500 leading-relaxed">Importados desde Estados Unidos con certificación de autenticidad.</p>
+        </div>
+
+        <div class="fade-in card-item p-6 sm:p-8 rounded-2xl bg-dark-tertiary/50 dark:bg-dark-tertiary/50 bg-white border border-white/5 dark:border-white/5 border-gray-200 hover:border-accent-gold/20 transition-all duration-500">
+          <div class="w-12 h-12 rounded-xl bg-accent-gold/10 flex items-center justify-center mb-5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-accent-gold"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="6"/><circle cx="12" cy="12" r="2"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold text-white dark:text-white text-gray-900 mb-2">12 meses de garantía</h3>
+          <p class="text-sm text-white/50 dark:text-white/50 text-gray-500 leading-relaxed">Todos nuestros relojes incluyen garantía oficial por 12 meses.</p>
+        </div>
+
+        <div class="fade-in card-item p-6 sm:p-8 rounded-2xl bg-dark-tertiary/50 dark:bg-dark-tertiary/50 bg-white border border-white/5 dark:border-white/5 border-gray-200 hover:border-accent-gold/20 transition-all duration-500">
+          <div class="w-12 h-12 rounded-xl bg-accent-gold/10 flex items-center justify-center mb-5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-accent-gold"><path d="M6 9h.01M6 15h.01M10 9h2.01M10 15h2.01M14 9h2.01M14 15h2.01M18 9h.01M18 15h.01"/><path d="M4 5h16v14H4z"/><circle cx="12" cy="12" r="5"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold text-white dark:text-white text-gray-900 mb-2">Selección curada</h3>
+          <p class="text-sm text-white/50 dark:text-white/50 text-gray-500 leading-relaxed">Cada pieza es elegida cuidadosamente por nuestro equipo.</p>
+        </div>
+
+        <div class="fade-in card-item p-6 sm:p-8 rounded-2xl bg-dark-tertiary/50 dark:bg-dark-tertiary/50 bg-white border border-white/5 dark:border-white/5 border-gray-200 hover:border-accent-gold/20 transition-all duration-500">
+          <div class="w-12 h-12 rounded-xl bg-accent-gold/10 flex items-center justify-center mb-5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-accent-gold"><path d="M3 11h3l2-6 4 12 2-6h3"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold text-white dark:text-white text-gray-900 mb-2">Atención personalizada</h3>
+          <p class="text-sm text-white/50 dark:text-white/50 text-gray-500 leading-relaxed">Te acompañamos antes, durante y después de tu compra.</p>
+        </div>
+
+        <div class="fade-in card-item p-6 sm:p-8 rounded-2xl bg-dark-tertiary/50 dark:bg-dark-tertiary/50 bg-white border border-white/5 dark:border-white/5 border-gray-200 hover:border-accent-gold/20 transition-all duration-500">
+          <div class="w-12 h-12 rounded-xl bg-accent-gold/10 flex items-center justify-center mb-5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-accent-gold"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold text-white dark:text-white text-gray-900 mb-2">Entrega rápida</h3>
+          <p class="text-sm text-white/50 dark:text-white/50 text-gray-500 leading-relaxed">Recibe tu reloj en el menor tiempo posible, con total seguridad.</p>
+        </div>
+
+        <div class="fade-in card-item p-6 sm:p-8 rounded-2xl bg-dark-tertiary/50 dark:bg-dark-tertiary/50 bg-white border border-white/5 dark:border-white/5 border-gray-200 hover:border-accent-gold/20 transition-all duration-500">
+          <div class="w-12 h-12 rounded-xl bg-accent-gold/10 flex items-center justify-center mb-5">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-accent-gold"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+          </div>
+          <h3 class="text-lg font-semibold text-white dark:text-white text-gray-900 mb-2">Delivery gratuito</h3>
+          <p class="text-sm text-white/50 dark:text-white/50 text-gray-500 leading-relaxed">Envío sin costo para Lima Centro en todas tus compras.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== COLLECTION ===== -->
+  <section id="coleccion" class="py-20 sm:py-28 bg-dark-primary dark:bg-dark-primary bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16 fade-in">
+        <h2 class="text-3xl sm:text-4xl font-bold tracking-wide text-white dark:text-white text-gray-900 mb-4">
+          Colección <span class="text-accent-gold">Exclusiva</span>
+        </h2>
+        <p class="text-sm text-white/40 dark:text-white/40 text-gray-500 max-w-md mx-auto">Piezas seleccionadas para quienes valoran la precisión y el estilo.</p>
+        <div class="w-16 h-px bg-accent-gold/40 mx-auto mt-4"></div>
+      </div>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-5">
+
+        <!-- Product 1: Casio G-Shock -->
+        <div class="fade-in product-card relative">
+          <div class="relative rounded-2xl overflow-hidden bg-dark-tertiary/30 dark:bg-dark-tertiary/30 bg-gray-100 border border-white/5 dark:border-white/5 border-gray-200 transition-all duration-500 hover:border-accent-gold/20 hover:shadow-[0_0_40px_rgba(200,169,106,0.08)]">
+            <div class="relative aspect-square overflow-hidden">
+              <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-dark-primary/60 z-10 pointer-events-none"></div>
+              <div class="absolute inset-0 bg-gradient-to-t from-accent-gold/5 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-700 z-10 pointer-events-none"></div>
+              <div class="shimmer-overlay absolute inset-0 z-10 opacity-0 hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+              <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(200,169,106,0.06)_0%,_transparent_60%)] opacity-0 hover:opacity-100 transition-opacity duration-700 z-10 pointer-events-none"></div>
+              <img src="imgs/Casio G-Shock.jpeg" alt="Casio G-Shock" class="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-105" />
+              <div class="absolute top-3 right-3 z-20">
+                <span class="stock-badge px-3 py-1 text-[10px] font-semibold tracking-wider uppercase bg-accent-gold/90 text-dark-primary rounded-full">Stock limitado</span>
+              </div>
+            </div>
+            <div class="p-5 sm:p-6 space-y-4">
+              <div>
+                <h3 class="text-base sm:text-lg font-semibold text-white dark:text-white text-gray-900">Casio G-Shock</h3>
+                <p class="text-xs text-white/40 dark:text-white/40 text-gray-500 mt-1">Solo queda 1 unidad disponible</p>
+              </div>
+              <p class="text-2xl sm:text-3xl font-bold text-accent-gold tracking-tight">S/ 599.00</p>
+              <div class="flex gap-3">
+                <button class="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-medium text-white/80 dark:text-white/80 text-gray-700 border border-white/10 dark:border-white/10 border-gray-300 rounded-xl hover:border-accent-gold/30 hover:text-accent-gold transition-all duration-300">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                  Ver detalles
+                </button>
+                <a href="https://wa.me/51970660178" target="_blank" rel="noopener noreferrer" class="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-medium text-dark-primary bg-accent-gold rounded-xl hover:bg-accent-gold/90 transition-all duration-300">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                  Comprar
+                </a>
+              </div>
+              <p class="text-[11px] text-accent-silver/40 dark:text-accent-silver/40 text-gray-400 text-center">Delivery gratuito para Lima Centro.</p>
+            </div>
+          </div>
+          <p class="text-[10px] text-white/20 dark:text-white/20 text-gray-400 leading-relaxed mt-3 px-1 text-center">Debido a que trabajamos con relojes originales importados desde Estados Unidos, nuestras unidades son limitadas. Una vez agotado el stock, el producto quedará temporalmente fuera de disponibilidad hasta una nueva importación.</p>
+        </div>
+
+        <!-- Product 2: Invicta Huracan Blue Dial -->
+        <div class="fade-in product-card relative">
+          <div class="relative rounded-2xl overflow-hidden bg-dark-tertiary/30 dark:bg-dark-tertiary/30 bg-gray-100 border border-white/5 dark:border-white/5 border-gray-200 transition-all duration-500 hover:border-accent-gold/20 hover:shadow-[0_0_40px_rgba(200,169,106,0.08)]">
+            <div class="relative aspect-square overflow-hidden">
+              <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-dark-primary/60 z-10 pointer-events-none"></div>
+              <div class="absolute inset-0 bg-gradient-to-t from-accent-gold/5 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-700 z-10 pointer-events-none"></div>
+              <div class="shimmer-overlay absolute inset-0 z-10 opacity-0 hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+              <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(200,169,106,0.06)_0%,_transparent_60%)] opacity-0 hover:opacity-100 transition-opacity duration-700 z-10 pointer-events-none"></div>
+              <img src="imgs/Invicta Huracan Blue Dial.jpeg" alt="Invicta Huracan Blue Dial" class="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-105" />
+              <div class="absolute top-3 right-3 z-20">
+                <span class="stock-badge px-3 py-1 text-[10px] font-semibold tracking-wider uppercase bg-accent-gold/90 text-dark-primary rounded-full">Stock limitado</span>
+              </div>
+            </div>
+            <div class="p-5 sm:p-6 space-y-4">
+              <div>
+                <h3 class="text-base sm:text-lg font-semibold text-white dark:text-white text-gray-900">Invicta Huracan Blue Dial</h3>
+                <p class="text-xs text-white/40 dark:text-white/40 text-gray-500 mt-1">Solo queda 1 unidad disponible</p>
+              </div>
+              <p class="text-2xl sm:text-3xl font-bold text-accent-gold tracking-tight">S/ 519.00</p>
+              <div class="flex gap-3">
+                <button class="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-medium text-white/80 dark:text-white/80 text-gray-700 border border-white/10 dark:border-white/10 border-gray-300 rounded-xl hover:border-accent-gold/30 hover:text-accent-gold transition-all duration-300">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                  Ver detalles
+                </button>
+                <a href="https://wa.me/51970660178" target="_blank" rel="noopener noreferrer" class="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-medium text-dark-primary bg-accent-gold rounded-xl hover:bg-accent-gold/90 transition-all duration-300">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                  Comprar
+                </a>
+              </div>
+              <p class="text-[11px] text-accent-silver/40 dark:text-accent-silver/40 text-gray-400 text-center">Delivery gratuito para Lima Centro.</p>
+            </div>
+          </div>
+          <p class="text-[10px] text-white/20 dark:text-white/20 text-gray-400 leading-relaxed mt-3 px-1 text-center">Debido a que trabajamos con relojes originales importados desde Estados Unidos, nuestras unidades son limitadas. Una vez agotado el stock, el producto quedará temporalmente fuera de disponibilidad hasta una nueva importación.</p>
+        </div>
+
+        <!-- Product 3: Invicta Pro Diver Chronograph -->
+        <div class="fade-in product-card relative">
+          <div class="relative rounded-2xl overflow-hidden bg-dark-tertiary/30 dark:bg-dark-tertiary/30 bg-gray-100 border border-white/5 dark:border-white/5 border-gray-200 transition-all duration-500 hover:border-accent-gold/20 hover:shadow-[0_0_40px_rgba(200,169,106,0.08)]">
+            <div class="relative aspect-square overflow-hidden">
+              <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-dark-primary/60 z-10 pointer-events-none"></div>
+              <div class="absolute inset-0 bg-gradient-to-t from-accent-gold/5 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-700 z-10 pointer-events-none"></div>
+              <div class="shimmer-overlay absolute inset-0 z-10 opacity-0 hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+              <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(200,169,106,0.06)_0%,_transparent_60%)] opacity-0 hover:opacity-100 transition-opacity duration-700 z-10 pointer-events-none"></div>
+              <img src="imgs/Invicta Pro Diver Chronograph.jpeg" alt="Invicta Pro Diver Chronograph" class="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-105" />
+              <div class="absolute top-3 right-3 z-20">
+                <span class="stock-badge px-3 py-1 text-[10px] font-semibold tracking-wider uppercase bg-accent-gold/90 text-dark-primary rounded-full">Stock limitado</span>
+              </div>
+            </div>
+            <div class="p-5 sm:p-6 space-y-4">
+              <div>
+                <h3 class="text-base sm:text-lg font-semibold text-white dark:text-white text-gray-900">Invicta Pro Diver Chronograph</h3>
+                <p class="text-xs text-white/40 dark:text-white/40 text-gray-500 mt-1">Solo queda 1 unidad disponible</p>
+              </div>
+              <p class="text-2xl sm:text-3xl font-bold text-accent-gold tracking-tight">S/ 569.00</p>
+              <div class="flex gap-3">
+                <button class="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-medium text-white/80 dark:text-white/80 text-gray-700 border border-white/10 dark:border-white/10 border-gray-300 rounded-xl hover:border-accent-gold/30 hover:text-accent-gold transition-all duration-300">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                  Ver detalles
+                </button>
+                <a href="https://wa.me/51970660178" target="_blank" rel="noopener noreferrer" class="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-medium text-dark-primary bg-accent-gold rounded-xl hover:bg-accent-gold/90 transition-all duration-300">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                  Comprar
+                </a>
+              </div>
+              <p class="text-[11px] text-accent-silver/40 dark:text-accent-silver/40 text-gray-400 text-center">Delivery gratuito para Lima Centro.</p>
+            </div>
+          </div>
+          <p class="text-[10px] text-white/20 dark:text-white/20 text-gray-400 leading-relaxed mt-3 px-1 text-center">Debido a que trabajamos con relojes originales importados desde Estados Unidos, nuestras unidades son limitadas. Una vez agotado el stock, el producto quedará temporalmente fuera de disponibilidad hasta una nueva importación.</p>
+        </div>
+
+        <!-- Product 4: Invicta Pro Diver Quartz -->
+        <div class="fade-in product-card relative">
+          <div class="relative rounded-2xl overflow-hidden bg-dark-tertiary/30 dark:bg-dark-tertiary/30 bg-gray-100 border border-white/5 dark:border-white/5 border-gray-200 transition-all duration-500 hover:border-accent-gold/20 hover:shadow-[0_0_40px_rgba(200,169,106,0.08)]">
+            <div class="relative aspect-square overflow-hidden">
+              <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-dark-primary/60 z-10 pointer-events-none"></div>
+              <div class="absolute inset-0 bg-gradient-to-t from-accent-gold/5 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-700 z-10 pointer-events-none"></div>
+              <div class="shimmer-overlay absolute inset-0 z-10 opacity-0 hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
+              <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(200,169,106,0.06)_0%,_transparent_60%)] opacity-0 hover:opacity-100 transition-opacity duration-700 z-10 pointer-events-none"></div>
+              <img src="imgs/Invicta Pro Diver Quartz.jpeg" alt="Invicta Pro Diver Quartz" class="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-105" />
+              <div class="absolute top-3 right-3 z-20">
+                <span class="stock-badge px-3 py-1 text-[10px] font-semibold tracking-wider uppercase bg-accent-gold/90 text-dark-primary rounded-full">Stock limitado</span>
+              </div>
+            </div>
+            <div class="p-5 sm:p-6 space-y-4">
+              <div>
+                <h3 class="text-base sm:text-lg font-semibold text-white dark:text-white text-gray-900">Invicta Pro Diver Quartz</h3>
+                <p class="text-xs text-white/40 dark:text-white/40 text-gray-500 mt-1">Solo queda 1 unidad disponible</p>
+              </div>
+              <p class="text-2xl sm:text-3xl font-bold text-accent-gold tracking-tight">S/ 389.00</p>
+              <div class="flex gap-3">
+                <button class="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-medium text-white/80 dark:text-white/80 text-gray-700 border border-white/10 dark:border-white/10 border-gray-300 rounded-xl hover:border-accent-gold/30 hover:text-accent-gold transition-all duration-300">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7Z"/><circle cx="12" cy="12" r="3"/></svg>
+                  Ver detalles
+                </button>
+                <a href="https://wa.me/51970660178" target="_blank" rel="noopener noreferrer" class="flex-1 flex items-center justify-center gap-2 px-4 py-2.5 text-xs font-medium text-dark-primary bg-accent-gold rounded-xl hover:bg-accent-gold/90 transition-all duration-300">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+                  Comprar
+                </a>
+              </div>
+              <p class="text-[11px] text-accent-silver/40 dark:text-accent-silver/40 text-gray-400 text-center">Delivery gratuito para Lima Centro.</p>
+            </div>
+          </div>
+          <p class="text-[10px] text-white/20 dark:text-white/20 text-gray-400 leading-relaxed mt-3 px-1 text-center">Debido a que trabajamos con relojes originales importados desde Estados Unidos, nuestras unidades son limitadas. Una vez agotado el stock, el producto quedará temporalmente fuera de disponibilidad hasta una nueva importación.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WARRANTY ===== -->
+  <section id="garantia" class="py-20 sm:py-28 bg-dark-secondary dark:bg-dark-secondary bg-gray-50">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="fade-in">
+        <div class="w-16 h-16 rounded-2xl bg-accent-gold/10 flex items-center justify-center mx-auto mb-6">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-accent-gold"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-bold tracking-wide text-white dark:text-white text-gray-900 mb-6">
+          Compra con <span class="text-accent-gold">tranquilidad</span>
+        </h2>
+        <div class="w-16 h-px bg-accent-gold/40 mx-auto mb-8"></div>
+        <p class="text-sm sm:text-base text-white/50 dark:text-white/50 text-gray-600 leading-relaxed max-w-2xl mx-auto">
+          Todos nuestros relojes son originales e importados desde Estados Unidos.<br /><br />
+          Cada compra incluye una garantía oficial de 12 meses para brindarte mayor confianza y respaldo.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== OUR STORY ===== -->
+  <section id="nosotros" class="py-20 sm:py-28 bg-dark-primary dark:bg-dark-primary bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="fade-in">
+        <div class="w-16 h-16 rounded-2xl bg-accent-gold/10 flex items-center justify-center mx-auto mb-6">
+          <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-accent-gold"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        </div>
+        <h2 class="text-3xl sm:text-4xl font-bold tracking-wide text-white dark:text-white text-gray-900 mb-4">
+          Nuestra <span class="text-accent-gold">historia</span>
+        </h2>
+        <div class="w-16 h-px bg-accent-gold/40 mx-auto mb-8"></div>
+        <div class="space-y-5 text-sm sm:text-base text-white/50 dark:text-white/50 text-gray-600 leading-relaxed max-w-3xl mx-auto">
+          <p>En TimeVerse creemos que el tiempo no solo se mide. Cada segundo representa una oportunidad, un logro y un recuerdo.</p>
+          <p>Nuestra misión es ofrecer relojes originales que acompañen esos momentos importantes con elegancia, precisión y personalidad.</p>
+          <p>Cada pieza representa nuestro compromiso con la calidad y con quienes valoran el verdadero significado del tiempo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CONTACT ===== -->
+  <section id="contacto" class="py-20 sm:py-28 bg-dark-secondary dark:bg-dark-secondary bg-gray-50">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-14 fade-in">
+        <h2 class="text-3xl sm:text-4xl font-bold tracking-wide text-white dark:text-white text-gray-900 mb-4">
+          <span class="text-accent-gold">Contacto</span>
+        </h2>
+        <div class="w-16 h-px bg-accent-gold/40 mx-auto"></div>
+      </div>
+
+      <div class="grid lg:grid-cols-2 gap-12 items-start">
+        <div class="space-y-8 fade-in">
+          <div>
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 rounded-xl bg-accent-gold/10 flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-accent-gold"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1Z"/><path d="M14 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1Z"/><path d="M9.5 13.5c.5.5 1.5 1 2.5 1s2-.5 2.5-1"/></svg>
+              </div>
+              <span class="text-sm font-medium text-white/60 dark:text-white/60 text-gray-500 tracking-wider uppercase">WhatsApp</span>
+            </div>
+            <p class="text-xl sm:text-2xl font-semibold text-white dark:text-white text-gray-900 mb-4">+51 970 660 178</p>
+            <a href="https://wa.me/51970660178" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-6 py-3 text-sm font-medium text-dark-primary bg-accent-gold rounded-full hover:bg-accent-gold/90 transition-all duration-300">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1Z"/><path d="M14 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1Z"/><path d="M9.5 13.5c.5.5 1.5 1 2.5 1s2-.5 2.5-1"/></svg>
+              Contactar por WhatsApp
+            </a>
+          </div>
+
+          <div class="border-t border-white/5 dark:border-white/5 border-gray-200 pt-8">
+            <div class="flex items-center gap-3 mb-4">
+              <div class="w-10 h-10 rounded-xl bg-accent-gold/10 flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-accent-gold"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              </div>
+              <span class="text-sm font-medium text-white/60 dark:text-white/60 text-gray-500 tracking-wider uppercase">Déjanos un mensaje</span>
+            </div>
+            <p class="text-sm text-white/40 dark:text-white/40 text-gray-500 mb-6">Te contactaremos a la brevedad.</p>
+
+            <form id="contact-form" class="space-y-4">
+              <input type="text" name="name" placeholder="Nombre" required class="w-full px-4 py-3 bg-dark-tertiary/60 dark:bg-dark-tertiary/60 bg-gray-100 border border-white/5 dark:border-white/5 border-gray-300 rounded-xl text-sm text-white dark:text-white text-gray-900 placeholder-white/30 dark:placeholder-white/30 placeholder-gray-400 outline-none focus:border-accent-gold/40 transition-colors duration-300" />
+              <input type="tel" name="whatsapp" placeholder="Número de WhatsApp" required class="w-full px-4 py-3 bg-dark-tertiary/60 dark:bg-dark-tertiary/60 bg-gray-100 border border-white/5 dark:border-white/5 border-gray-300 rounded-xl text-sm text-white dark:text-white text-gray-900 placeholder-white/30 dark:placeholder-white/30 placeholder-gray-400 outline-none focus:border-accent-gold/40 transition-colors duration-300" />
+              <textarea name="message" placeholder="Mensaje (opcional)" rows="3" class="w-full px-4 py-3 bg-dark-tertiary/60 dark:bg-dark-tertiary/60 bg-gray-100 border border-white/5 dark:border-white/5 border-gray-300 rounded-xl text-sm text-white dark:text-white text-gray-900 placeholder-white/30 dark:placeholder-white/30 placeholder-gray-400 outline-none focus:border-accent-gold/40 transition-colors duration-300 resize-none"></textarea>
+              <button type="submit" id="form-submit" class="w-full flex items-center justify-center gap-2 px-6 py-3 text-sm font-medium text-dark-primary bg-accent-gold rounded-xl hover:bg-accent-gold/90 disabled:opacity-50 transition-all duration-300">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
+                Quiero que me contacten
+              </button>
+            </form>
+            <div id="form-success" class="hidden flex-col items-center gap-4 py-8">
+              <div class="w-14 h-14 rounded-full bg-accent-gold/15 flex items-center justify-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-accent-gold"><path d="M20 6 9 17l-5-5"/></svg>
+              </div>
+              <p class="text-sm text-white/70 dark:text-white/70 text-gray-700 text-center max-w-xs">Gracias por contactarnos. Muy pronto nos comunicaremos contigo.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="hidden lg:flex items-center justify-center fade-in">
+          <div class="relative w-full max-w-sm aspect-square">
+            <div class="absolute inset-0 bg-gradient-to-b from-accent-gold/5 to-transparent rounded-full blur-3xl"></div>
+            <div class="relative w-full h-full rounded-2xl bg-dark-tertiary/30 dark:bg-dark-tertiary/30 bg-gray-100 border border-white/5 dark:border-white/5 border-gray-200 flex items-center justify-center">
+              <div class="text-center p-8">
+                <div class="text-6xl font-bold tracking-[0.15em] text-accent-gold/20 mb-2">TV</div>
+                <p class="text-xs tracking-[0.2em] text-accent-silver/20 dark:text-accent-silver/20 text-gray-300 uppercase">Más allá del tiempo</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="py-12 sm:py-16 bg-dark-primary dark:bg-dark-primary bg-white border-t border-white/5 dark:border-white/5 border-gray-200">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-col items-center text-center gap-6">
+        <div class="flex flex-col items-center">
+          <span class="text-2xl sm:text-3xl font-bold tracking-[0.25em] text-accent-gold">TIMEVERSE</span>
+          <span class="text-[10px] sm:text-xs tracking-[0.15em] text-accent-silver/50 -mt-0.5">Más allá del tiempo</span>
+        </div>
+
+        <div class="flex items-center gap-2 text-sm text-white/40 dark:text-white/40 text-gray-500">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="text-accent-gold"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1Z"/><path d="M14 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1Z"/><path d="M9.5 13.5c.5.5 1.5 1 2.5 1s2-.5 2.5-1"/></svg>
+          <span>+51 970 660 178</span>
+        </div>
+
+        <a href="https://wa.me/51970660178" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-5 py-2.5 text-xs font-medium text-dark-primary bg-accent-gold rounded-full hover:bg-accent-gold/90 transition-all duration-300">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"/><path d="M9 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1Z"/><path d="M14 10a.5.5 0 0 0 1 0V9a.5.5 0 0 0-1 0v1Z"/><path d="M9.5 13.5c.5.5 1.5 1 2.5 1s2-.5 2.5-1"/></svg>
+          Escríbenos
+        </a>
+
+        <div class="w-16 h-px bg-white/5 dark:bg-white/5 bg-gray-200"></div>
+
+        <p class="text-[11px] text-white/20 dark:text-white/20 text-gray-400 tracking-wider">&copy; 2026 TimeVerse. Todos los derechos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
