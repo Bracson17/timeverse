@@ -1,13 +1,4 @@
 // =========================================
-// EmailJS Configuration
-// =========================================
-const EMAILJS_CONFIG = {
-  publicKey: 'YOUR_PUBLIC_KEY',
-  serviceId: 'YOUR_SERVICE_ID',
-  templateId: 'YOUR_TEMPLATE_ID',
-};
-
-// =========================================
 // Product Data
 // =========================================
 const PRODUCTS_DATA = [
@@ -272,52 +263,98 @@ document.addEventListener('DOMContentLoaded', function () {
     if (e.key === 'Escape') closeModal();
   });
 
-  // ---- Contact Form (EmailJS) ----
-  if (document.getElementById('contact-form')) {
-    emailjs.init(EMAILJS_CONFIG.publicKey);
+  // ---- Validation helpers ----
+  var nameInput = document.getElementById('input-name');
+  var waInput = document.getElementById('input-whatsapp');
+  var nameError = document.getElementById('name-error');
+  var waError = document.getElementById('whatsapp-error');
+
+  function validateName() {
+    var val = nameInput.value.trim();
+    if (val.length > 0 && !/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/.test(val)) {
+      nameInput.classList.add('input-error');
+      nameError.classList.remove('hidden');
+      return false;
+    }
+    nameInput.classList.remove('input-error');
+    nameError.classList.add('hidden');
+    return true;
   }
 
-  const contactForm = document.getElementById('contact-form');
-  const formSubmit = document.getElementById('form-submit');
-  const formSuccess = document.getElementById('form-success');
+  function validateWhatsApp() {
+    var digits = waInput.value.replace(/\s/g, '');
+    if (digits.length > 0 && (!/^\d+$/.test(digits) || digits.length !== 9)) {
+      waInput.classList.add('input-error');
+      waError.classList.remove('hidden');
+      return false;
+    }
+    waInput.classList.remove('input-error');
+    waError.classList.add('hidden');
+    return true;
+  }
+
+  nameInput.addEventListener('input', validateName);
+  waInput.addEventListener('input', validateWhatsApp);
+
+  // ---- Contact Form (Formspree) ----
+  var contactForm = document.getElementById('contact-form');
+  var formSubmit = document.getElementById('form-submit');
+  var successModal = document.getElementById('success-modal');
+  var successClose = document.getElementById('success-close');
+  var successOverlay = document.getElementById('success-overlay');
 
   if (contactForm) {
     contactForm.addEventListener('submit', async function (e) {
       e.preventDefault();
 
-      const name = contactForm.querySelector('[name="name"]').value.trim();
-      const whatsapp = contactForm
-        .querySelector('[name="whatsapp"]')
-        .value.trim();
-
-      if (!name || !whatsapp) return;
+      var nameOk = validateName();
+      var waOk = validateWhatsApp();
+      if (!nameOk || !waOk) return;
 
       formSubmit.disabled = true;
       formSubmit.textContent = 'Enviando...';
 
       try {
-        await emailjs.send(
-          EMAILJS_CONFIG.serviceId,
-          EMAILJS_CONFIG.templateId,
-          {
-            name: name,
-            whatsapp: whatsapp,
-            message: contactForm
-              .querySelector('[name="message"]')
-              .value.trim(),
-          }
-        );
+        var res = await fetch(contactForm.action, {
+          method: 'POST',
+          body: new FormData(contactForm),
+          headers: { Accept: 'application/json' },
+        });
 
-        contactForm.classList.add('hidden');
-        formSuccess.classList.remove('hidden');
-      } catch (err) {
-        console.error('EmailJS error:', err);
+        if (res.ok) {
+          contactForm.reset();
+          nameInput.classList.remove('input-error');
+          waInput.classList.remove('input-error');
+          nameError.classList.add('hidden');
+          waError.classList.add('hidden');
+          successModal.classList.remove('hidden');
+          document.body.style.overflow = 'hidden';
+        } else {
+          throw new Error('Formspree error');
+        }
+      } catch {
         formSubmit.disabled = false;
         formSubmit.textContent = 'Quiero que me contacten';
         alert('Ocurrió un error al enviar. Intenta nuevamente.');
       }
     });
   }
+
+  function closeSuccess() {
+    successModal.classList.add('hidden');
+    document.body.style.overflow = '';
+    formSubmit.disabled = false;
+    formSubmit.textContent = 'Quiero que me contacten';
+  }
+
+  successClose.addEventListener('click', closeSuccess);
+  successOverlay.addEventListener('click', closeSuccess);
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && !successModal.classList.contains('hidden')) {
+      closeSuccess();
+    }
+  });
 
   // ---- Smooth scroll for anchor links ----
   document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {

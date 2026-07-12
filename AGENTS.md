@@ -22,7 +22,7 @@ npx serve .          # or python -m http.server 8000, or any static server
 | Tagline | **Más allá del tiempo** (Spanish everywhere) |
 | Logo | `TIMEVERSE` (top-left) with tagline below |
 | WhatsApp | `+51 970 660 178` — link: `https://wa.me/51970660178` |
-| Email (hidden) | `Bracson2002@outlook.com` — sent via EmailJS, never in DOM |
+| Email (hidden) | `Bracson2002@outlook.com` — sent via Formspree, never in DOM |
 
 ## Color palette
 
@@ -82,16 +82,4 @@ Images in `imgs/` folder. Product cards have: Name, Price, badge, "Ver detalles"
 - **Responsive** — Tailwind breakpoints (sm, md, lg). Mobile hamburger menu.
 - **SEO** — meta tags, Open Graph, lang="es", semantic HTML.
 - **Accessibility** — ARIA labels, semantic elements, keyboard nav.
-- **EmailJS** — Configure keys in `script.js` under `EMAILJS_CONFIG`. Email hidden from DOM.
-
-## EmailJS setup
-
-Edit `EMAILJS_CONFIG` in `script.js`:
-
-```js
-const EMAILJS_CONFIG = {
-  publicKey: 'your_public_key',
-  serviceId: 'your_service_id',
-  templateId: 'your_template_id',
-};
-```
+- **Formspree** — Form action points to `https://formspree.io/f/xlgqrlop`. No keys needed. Email hidden from DOM.
