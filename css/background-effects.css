@@ -1,0 +1,181 @@
+/* ===== BACKGROUND EFFECTS ===== */
+
+/* Global container for background effects */
+.background-effects {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+/* ===== FLOATING PARTICLES ===== */
+.particles-container {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+}
+
+.particle {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  opacity: 0;
+}
+
+/* Gold dust particles */
+.particle-gold {
+  background: radial-gradient(circle, rgba(200, 169, 106, 0.8) 0%, rgba(200, 169, 106, 0) 70%);
+  animation: particleFloat linear infinite;
+}
+
+/* Subtle white particles */
+.particle-white {
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, rgba(255, 255, 255, 0) 70%);
+  animation: particleFloat linear infinite;
+}
+
+@keyframes particleFloat {
+  0% {
+    transform: translateY(100vh) translateX(0) scale(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+    transform: translateY(90vh) translateX(10px) scale(1);
+  }
+  50% {
+    transform: translateY(50vh) translateX(-10px) scale(0.8);
+  }
+  90% {
+    opacity: 0.6;
+    transform: translateY(10vh) translateX(5px) scale(0.6);
+  }
+  100% {
+    transform: translateY(-10vh) translateX(0) scale(0);
+    opacity: 0;
+  }
+}
+
+/* ===== GLOW ORB ===== */
+.glow-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.15;
+  animation: orbFloat 20s ease-in-out infinite;
+  will-change: transform;
+}
+
+html:not(.dark) .glow-orb {
+  opacity: 0.08;
+}
+
+.glow-orb-1 {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(200, 169, 106, 0.6) 0%, rgba(200, 169, 106, 0) 70%);
+  top: -200px;
+  left: -100px;
+  animation-delay: 0s;
+  animation-duration: 25s;
+}
+
+.glow-orb-2 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(184, 188, 194, 0.4) 0%, rgba(184, 188, 194, 0) 70%);
+  bottom: -150px;
+  right: -100px;
+  animation-delay: -5s;
+  animation-duration: 30s;
+}
+
+.glow-orb-3 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(200, 169, 106, 0.3) 0%, rgba(200, 169, 106, 0) 70%);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation-delay: -10s;
+  animation-duration: 35s;
+}
+
+@keyframes orbFloat {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(50px, -30px) scale(1.1);
+  }
+  50% {
+    transform: translate(-20px, 40px) scale(0.9);
+  }
+  75% {
+    transform: translate(30px, 20px) scale(1.05);
+  }
+}
+
+/* ===== LIGHT BEAMS ===== */
+.light-beams {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  opacity: 0.3;
+}
+
+.light-beam {
+  position: absolute;
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(200, 169, 106, 0.1),
+    rgba(200, 169, 106, 0.3),
+    rgba(200, 169, 106, 0.1),
+    transparent
+  );
+  animation: beamSweep 8s ease-in-out infinite;
+}
+
+.light-beam:nth-child(1) { left: 20%; animation-delay: 0s; }
+.light-beam:nth-child(2) { left: 50%; animation-delay: -2s; }
+.light-beam:nth-child(3) { left: 80%; animation-delay: -4s; }
+
+@keyframes beamSweep {
+  0%, 100% {
+    opacity: 0;
+    transform: translateX(-20px) scaleY(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: translateX(20px) scaleY(1);
+  }
+}
+
+/* ===== AMBIENT NOISE TEXTURE (optional) ===== */
+.ambient-noise {
+  position: absolute;
+  inset: 0;
+  opacity: 0.02;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 200px;
+  pointer-events: none;
+}
+
+/* ===== SCROLL-BASED OPACITY ===== */
+.background-effects {
+  transition: opacity 0.3s ease;
+}
+
+/* Reduce effects on scroll for performance */
+@media (prefers-reduced-motion: reduce) {
+  .particle,
+  .glow-orb,
+  .light-beam {
+    animation: none;
+    opacity: 0;
+  }
+}
