@@ -1,0 +1,213 @@
+/* ===== BASE ===== */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Manrope', 'Montserrat', 'Poppins', sans-serif;
+  margin: 0;
+  padding: 0;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+/* Light mode */
+body {
+  background-color: #f8f8f8;
+  color: #1a1a1a;
+}
+
+html.dark body {
+  background-color: #0D0D0D;
+  color: #ffffff;
+}
+
+/* ===== SCROLLBAR ===== */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0D0D0D;
+}
+::-webkit-scrollbar-thumb {
+  background: #2B2B2B;
+  border-radius: 3px;
+}
+html:not(.dark) ::-webkit-scrollbar-track {
+  background: #e5e5e5;
+}
+html:not(.dark) ::-webkit-scrollbar-thumb {
+  background: #999;
+}
+
+/* ===== SELECTION ===== */
+::selection {
+  background: rgba(200, 169, 106, 0.3);
+  color: #fff;
+}
+
+/* ===== RESPONSIVE IMAGE HELPERS ===== */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ===== FORM FOCUS ===== */
+input:focus, textarea:focus {
+  outline: none;
+}
+
+/* ===== LINK RESET ===== */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ===== LIGHT MODE TEXT CONTRAST FIXES ===== */
+
+/* General text colors - Light mode */
+html:not(.dark) .text-gray-800 {
+  color: #1f2937 !important;
+}
+
+html:not(.dark) .text-gray-700 {
+  color: #374151 !important;
+}
+
+html:not(.dark) .text-gray-600 {
+  color: #4b5563 !important;
+}
+
+html:not(.dark) .text-gray-500 {
+  color: #6b7280 !important;
+}
+
+/* Dark text on light backgrounds */
+html:not(.dark) .text-white {
+  color: #111827 !important;
+}
+
+html:not(.dark) .text-white\/70,
+html:not(.dark) .text-white\/80,
+html:not(.dark) .text-white\/60,
+html:not(.dark) .text-white\/50,
+html:not(.dark) .text-white\/40,
+html:not(.dark) .text-white\/30 {
+  color: #374151 !important;
+}
+
+/* Accent silver in light mode */
+html:not(.dark) .text-accent-silver\/70,
+html:not(.dark) .text-accent-silver\/80,
+html:not(.dark) .text-accent-silver\/50,
+html:not(.dark) .text-accent-silver\/40,
+html:not(.dark) .text-accent-silver\/20 {
+  color: #4b5563 !important;
+}
+
+/* Placeholder colors light mode */
+html:not(.dark) .placeholder-white\/30 {
+  color: #9ca3af !important;
+}
+
+/* Card backgrounds light mode */
+html:not(.dark) .bg-dark-tertiary\/50,
+html:not(.dark) .bg-dark-tertiary\/30,
+html:not(.dark) .bg-dark-tertiary\/60 {
+  background-color: #ffffff !important;
+}
+
+/* Border colors light mode */
+html:not(.dark) .border-white\/5,
+html:not(.dark) .border-white\/10 {
+  border-color: #e5e7eb !important;
+}
+
+/* Gradient adjustments light mode */
+html:not(.dark) .from-dark-primary\/60,
+html:not(.dark) .from-dark-primary\/30 {
+  --tw-gradient-from: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* Section background overrides for better contrast */
+html:not(.dark) #hero {
+  background-color: #ffffff !important;
+}
+
+html:not(.dark) #coleccion {
+  background-color: #ffffff !important;
+}
+
+html:not(.dark) #nosotros {
+  background-color: #ffffff !important;
+}
+
+html:not(.dark) #garantia {
+  background-color: #f9fafb !important;
+}
+
+html:not(.dark) #contacto {
+  background-color: #f9fafb !important;
+}
+
+/* Footer light mode */
+html:not(.dark) footer {
+  background-color: #ffffff !important;
+  border-top-color: #e5e7eb !important;
+}
+
+/* Modal light mode */
+html:not(.dark) .modal-content {
+  background: #ffffff;
+  border-color: #e5e5e5;
+}
+
+html:not(.dark) .modal-content {
+  color: #1f2937 !important;
+}
+
+/* Success modal light mode */
+html:not(.dark) .success-content {
+  background: #ffffff;
+  border-color: rgba(200, 169, 106, 0.4);
+}
+
+/* Form inputs light mode */
+html:not(.dark) input,
+html:not(.dark) textarea {
+  background-color: #f3f4f6 !important;
+  border-color: #d1d5db !important;
+  color: #111827 !important;
+}
+
+html:not(.dark) input::placeholder,
+html:not(.dark) textarea::placeholder {
+  color: #9ca3af !important;
+}
+
+/* Product card light mode */
+html:not(.dark) .product-card .bg-dark-tertiary\/30 {
+  background-color: #f9fafb !important;
+}
+
+/* Hero section light mode specific */
+html:not(.dark) #hero .bg-dark-primary {
+  background-color: #ffffff !important;
+}
+
+html:not(.dark) #hero .via-dark-primary\/90 {
+  --tw-gradient-via: rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Header scrolled light mode */
+html:not(.dark) #header.scrolled {
+  background-color: rgba(255, 255, 255, 0.95) !important;
+}
+
+/* Ensure gold accent stays visible */
+.text-accent-gold {
+  color: #C8A96A;
+}
+
+html:not(.dark) .text-accent-gold {
+  color: #b8942a !important;
+}
