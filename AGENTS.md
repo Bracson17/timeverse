@@ -3,8 +3,8 @@
 ## Stack
 
 - **HTML5** — semantics, ARIA labels, Open Graph meta tags
-- **CSS** (Tailwind v3 via CDN + custom `styles.css`) — brand palette, animations, dark/light mode, responsive
-- **Vanilla JavaScript** (ES6+) — theme toggle, scroll effects, Intersection Observer animations, EmailJS, mobile menu
+- **CSS** (Tailwind v3 via CDN + archivos modulares en `css/`) — brand palette, animations, dark/light mode, responsive
+- **Vanilla JavaScript** (ES6+ en `js/`) — theme toggle, scroll effects, Intersection Observer animations, Formspree, mobile menu
 
 No frameworks, no build step. Open `index.html` directly or serve with any static server.
 
@@ -50,7 +50,7 @@ Dark mode is default. Stored in `localStorage` key `timeverse-theme`. Light mode
 | Invicta Pro Diver Chronograph | S/ 569.00 | Same |
 | Invicta Pro Diver Quartz | S/ 389.00 | Same |
 
-Images in `imgs/` folder. Product cards have: Name, Price, badge, "Ver detalles" btn, "Comprar" btn (WhatsApp), delivery note, and import legend.
+Images are split between `assets/images/` (cards) and `imgs/` (hero/extras). Optimized files are in `imgs/optimized/images` (`.avif`) and `imgs/optimized/videos` (`.mp4`).
 
 ## Sections (in order)
 
@@ -67,10 +67,27 @@ Images in `imgs/` folder. Product cards have: Name, Price, badge, "Ver detalles"
 
 ```
 /
-  index.html       # All sections (single page)
-  styles.css       # Custom CSS: animations, scrollbar, scroll-reveal, overrides
-  script.js        # JS: theme toggle, header scroll, Intersection Observer, EmailJS, mobile menu
-  imgs/            # Product images (5 files)
+  index.html
+  css/
+    base.css
+    components.css
+    animations.css
+    background-effects.css
+  js/
+    products.js
+    theme.js
+    menu.js
+    scroll.js
+    modal.js
+    form.js
+    background-effects.js
+    main.js
+  assets/
+    images/        # Product images used in cards (AVIF preferred)
+  imgs/            # Hero, gallery, source photos/videos and extra assets
+    optimized/
+      images/      # Converted AVIF images
+      videos/      # Converted MP4 videos
   AGENTS.md
 ```
 
