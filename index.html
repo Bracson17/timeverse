@@ -143,7 +143,8 @@
         <div class="order-1 lg:order-2 flex justify-center fade-in">
           <div class="hero-image relative w-72 h-72 sm:w-80 sm:h-80 md:w-96 md:h-96 lg:w-[500px] lg:h-[500px]">
             <div class="absolute inset-0 bg-gradient-to-b from-accent-gold/5 to-transparent rounded-full blur-3xl"></div>
-            <img src="assets/images/stock-relojes.png" alt="TimeVerse Relojes Premium" class="w-full h-full object-contain drop-shadow-2xl" />
+            <img src="imgs/TimeVerse_Portada.png" alt="TimeVerse Relojes Premium" class="w-full h-full object-contain drop-shadow-2xl" />
+
             <div class="absolute inset-0 rounded-full bg-gradient-to-t from-dark-primary/30 dark:from-dark-primary/30 from-white/30 via-transparent to-transparent pointer-events-none"></div>
           </div>
         </div>
@@ -301,12 +302,25 @@
         <!-- Product 3: Invicta Pro Diver Chronograph -->
         <div class="fade-in product-card relative h-full">
           <div class="relative rounded-2xl overflow-hidden bg-dark-tertiary/30 dark:bg-dark-tertiary/30 bg-gray-100 border border-white/5 dark:border-white/5 border-gray-200 transition-all duration-500 hover:border-accent-gold/20 hover:shadow-[0_0_40px_rgba(200,169,106,0.08)] flex flex-col h-full">
-            <div class="relative aspect-square overflow-hidden">
+            <div class="carousel-container relative aspect-square overflow-hidden">
               <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-dark-primary/60 z-10 pointer-events-none"></div>
               <div class="absolute inset-0 bg-gradient-to-t from-accent-gold/5 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-700 z-10 pointer-events-none"></div>
               <div class="shimmer-overlay absolute inset-0 z-10 opacity-0 hover:opacity-100 transition-opacity duration-700 pointer-events-none"></div>
               <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(200,169,106,0.06)_0%,_transparent_60%)] opacity-0 hover:opacity-100 transition-opacity duration-700 z-10 pointer-events-none"></div>
-              <img src="assets/images/invicta-pro-diver-chrono.jpeg" alt="Invicta Pro Diver Chronograph" class="w-full h-full object-cover object-center transition-transform duration-700 hover:scale-105" />
+              <div class="carousel-images w-full h-full">
+                <img src="assets/images/invicta-pro-diver-chrono.jpeg" alt="Invicta Pro Diver Chronograph" class="w-full h-full object-cover object-center carousel-img active" data-index="0" />
+                <img src="imgs/Pro_Driver_Chronograph.png" alt="Invicta Pro Diver Chronograph - Vista 2" class="w-full h-full object-cover object-center carousel-img" data-index="1" />
+              </div>
+              <button class="carousel-btn carousel-prev" aria-label="Anterior">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+              </button>
+              <button class="carousel-btn carousel-next" aria-label="Siguiente">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>
+              </button>
+              <div class="carousel-dots">
+                <span class="carousel-dot active" data-index="0"></span>
+                <span class="carousel-dot" data-index="1"></span>
+              </div>
               <div class="absolute top-3 right-3 z-20">
                 <span class="stock-badge px-3 py-1 text-[10px] font-semibold tracking-wider uppercase bg-accent-gold/90 text-dark-primary rounded-full">Stock limitado</span>
               </div>
