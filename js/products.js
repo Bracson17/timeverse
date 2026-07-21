@@ -1,11 +1,13 @@
-// =========================================
-// Product Data
-// =========================================
 const PRODUCTS_DATA = [
   {
     id: 1,
     name: 'Casio G-Shock',
     image: 'assets/images/casio-g-shock.avif',
+    images: [
+      'assets/images/casio-g-shock.avif',
+      'imgs/IMG_3816.avif',
+    ],
+    video: 'imgs/IMG_3789.mp4',
     price: 'S/ 609.00',
     description:
       'Diseñado para quienes buscan resistencia, estilo y funcionalidad en un solo reloj. Fabricado con caja de resina reforzada con fibra de carbono, correa de resina de alta durabilidad y cristal mineral resistente a impactos y rayaduras.',
@@ -23,6 +25,11 @@ const PRODUCTS_DATA = [
     id: 2,
     name: 'Invicta Huracan Blue Dial',
     image: 'assets/images/invicta-huracan-blue.avif',
+    images: [
+      'assets/images/invicta-huracan-blue.avif',
+      'imgs/IMG_3805.avif',
+    ],
+    video: 'imgs/IMG_3824.mp4',
     price: 'S/ 519.00',
     description:
       'Un reloj que combina elegancia y deportividad. Cuenta con caja y brazalete de acero inoxidable, cristal Flame Fusion de alta resistencia y un atractivo dial azul que resalta en cualquier ocasión.',
@@ -41,6 +48,13 @@ const PRODUCTS_DATA = [
     id: 3,
     name: 'Invicta Pro Diver Chronograph',
     image: 'assets/images/invicta-pro-diver-chrono.avif',
+    images: [
+      'assets/images/invicta-pro-diver-chrono.avif',
+      'imgs/Pro_Driver_Chronograph.avif',
+      'imgs/IMG_3795.avif',
+      'imgs/IMG_3808.avif',
+    ],
+    video: 'imgs/IMG_3802.mp4',
     price: 'S/ 589.00',
     description:
       'Diseño inspirado en relojes de buceo profesionales. Fabricado con caja y brazalete de acero inoxidable, cristal Flame Fusion y equipado con función cronógrafo para un estilo deportivo y elegante.',
@@ -60,6 +74,12 @@ const PRODUCTS_DATA = [
     id: 4,
     name: 'Invicta Pro Diver Quartz',
     image: 'assets/images/invicta-pro-diver-quartz.avif',
+    images: [
+      'assets/images/invicta-pro-diver-quartz.avif',
+      'imgs/IMG_3793.avif',
+      'imgs/IMG_3807.avif',
+    ],
+    video: 'imgs/IMG_3792.mp4',
     price: 'S/ 389.00',
     description:
       'Un clásico de la colección Pro Diver. Fabricado con caja de acero inoxidable, cristal Flame Fusion y movimiento de cuarzo de alta precisión. Su diseño versátil combina perfectamente con un estilo casual o formal.',

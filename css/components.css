@@ -295,23 +295,33 @@ html:not(.dark) .story-card:hover {
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background: rgba(13, 13, 13, 0.7);
+  background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(4px);
-  border: 1px solid rgba(200, 169, 106, 0.25);
+  border: 1px solid rgba(200, 169, 106, 0.4);
   color: #C8A96A;
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
-  opacity: 0.7;
   transition: all 0.3s ease;
 }
 
 .carousel-btn:hover {
-  opacity: 1;
-  background: rgba(200, 169, 106, 0.2);
-  border-color: rgba(200, 169, 106, 0.5);
+  background: rgba(200, 169, 106, 0.25);
+  border-color: #C8A96A;
   transform: translateY(-50%) scale(1.1);
+}
+
+html:not(.dark) .carousel-btn {
+  background: rgba(0, 0, 0, 0.55);
+  border-color: rgba(0, 0, 0, 0.15);
+  color: #fff;
+}
+
+html:not(.dark) .carousel-btn:hover {
+  background: rgba(200, 169, 106, 0.3);
+  border-color: #C8A96A;
+  color: #C8A96A;
 }
 
 .carousel-prev {
@@ -347,11 +357,4 @@ html:not(.dark) .story-card:hover {
   border-radius: 4px;
 }
 
-html:not(.dark) .carousel-btn {
-  background: rgba(255, 255, 255, 0.85);
-  border-color: rgba(0, 0, 0, 0.1);
-}
 
-html:not(.dark) .carousel-btn:hover {
-  background: rgba(200, 169, 106, 0.2);
-}

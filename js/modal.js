@@ -1,6 +1,3 @@
-// =========================================
-// Product Details Modal
-// =========================================
 function initModal() {
   const modal = document.getElementById('product-modal');
   const modalOverlay = document.getElementById('modal-overlay');
@@ -24,14 +21,41 @@ function initModal() {
     var waLink =
       'https://wa.me/51970660178?text=' + encodeURIComponent(product.waMsg);
 
+    var slidesHtml = '';
+    product.images.forEach(function (src, i) {
+      slidesHtml +=
+        '<img src="' + src + '" alt="' + product.name + '" class="w-full h-full object-cover carousel-img' + (i === 0 ? ' active' : '') + '" data-index="' + i + '" />';
+    });
+
+    if (product.video) {
+      var videoIndex = product.images.length;
+      slidesHtml +=
+        '<video src="' + product.video + '" class="w-full h-full object-cover carousel-img" data-index="' + videoIndex + '" muted playsinline controls preload="metadata"></video>';
+    }
+
+    var totalSlides = product.images.length + (product.video ? 1 : 0);
+
+    var dotsHtml = '';
+    for (var i = 0; i < totalSlides; i++) {
+      dotsHtml +=
+        '<span class="carousel-dot' + (i === 0 ? ' active' : '') + '" data-index="' + i + '"></span>';
+    }
+
     modalBody.innerHTML =
       '<div class="grid md:grid-cols-2 gap-6 md:gap-8">' +
-      '<div class="relative aspect-square rounded-xl overflow-hidden bg-dark-tertiary/30 dark:bg-dark-tertiary/30 bg-gray-100">' +
-      '<img src="' +
-      product.image +
-      '" alt="' +
-      product.name +
-      '" class="w-full h-full object-cover" />' +
+      '<div class="carousel-container modal-carousel relative w-full aspect-square rounded-xl overflow-hidden bg-dark-tertiary/30 dark:bg-dark-tertiary/30 bg-gray-100">' +
+      '<div class="carousel-images w-full h-full">' +
+      slidesHtml +
+      '</div>' +
+      '<button class="carousel-btn carousel-prev" aria-label="Anterior">' +
+      '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>' +
+      '</button>' +
+      '<button class="carousel-btn carousel-next" aria-label="Siguiente">' +
+      '<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg>' +
+      '</button>' +
+      '<div class="carousel-dots">' +
+      dotsHtml +
+      '</div>' +
       '</div>' +
       '<div class="flex flex-col justify-between">' +
       '<div>' +
@@ -62,14 +86,28 @@ function initModal() {
 
     modal.classList.remove('hidden');
     document.body.style.overflow = 'hidden';
+
+    var modalCarousel = modalBody.querySelector('.modal-carousel');
+    if (modalCarousel && typeof initCarousel === 'function') {
+      initCarousel(modalCarousel);
+    }
   }
 
   function closeModal() {
+    var modalCarousel = modalBody.querySelector('.modal-carousel');
+    if (modalCarousel) {
+      modalCarousel.querySelectorAll('video.carousel-img').forEach(function (v) {
+        v.pause();
+        if (v._onEnd) {
+          v.removeEventListener('ended', v._onEnd);
+          v._onEnd = null;
+        }
+      });
+    }
     modal.classList.add('hidden');
     document.body.style.overflow = '';
   }
 
-  // Ver detalles buttons
   document.querySelectorAll('[data-ver-detalles]').forEach(function (btn) {
     btn.addEventListener('click', function () {
       var id = parseInt(this.getAttribute('data-ver-detalles'));
@@ -77,7 +115,6 @@ function initModal() {
     });
   });
 
-  // Comprar buttons (per product WhatsApp)
   document.querySelectorAll('[data-comprar]').forEach(function (btn) {
     btn.addEventListener('click', function (e) {
       e.preventDefault();
